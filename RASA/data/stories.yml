@@ -1,0 +1,52 @@
+version: "2.0"
+
+stories:
+
+
+
+- story: postal_code path
+  steps:
+  - intent: postal_code
+  - action: action_postal_code
+
+- story: categories path
+  steps:
+  - intent: categories
+  - action: action_categories
+
+- story: one path
+  steps:
+  - intent: one
+  - action: action_one
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: action_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: action_no
+
+- story: help path
+  steps:
+    - intent: help
+    - action: action_help
